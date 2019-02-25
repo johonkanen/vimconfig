@@ -81,6 +81,8 @@ let g:syntastic_check_on_wq = 0
 
 "set the appropriate colorscheme
 :colorscheme torte
+"set hybrid relative numbering 
+:set nu rnu
 
 
 
@@ -89,7 +91,6 @@ let g:syntastic_check_on_wq = 0
 :set softtabstop=4
 :set shiftwidth=4
 
-:set nu!
 :set guifont=courier_new
 :set lines=42 columns=110
 
