@@ -35,7 +35,7 @@ Plugin 'scrooloose/nerdtree.git'
 "Plugin 'vim-syntastic/syntastic.git'
 
 "the ycm needs further configuration
-Plugin 'Valloric/YouCompleteMe.git'
+"Plugin 'Valloric/YouCompleteMe.git'
 
 "track ultisnippets 
 "Plugin 'SirVer/ultisnips'
@@ -84,6 +84,17 @@ let g:syntastic_check_on_wq = 0
 "set hybrid relative numbering 
 :set nu rnu
 
+"open Nerdtree
+autocmd vimenter * NERDTree
+
+
+"remap ctrl+movement keys to switch between splits
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+"set <space> for folding code from tab
+nnoremap <space> za
 
 
 :set guifont=courier_new:h9
