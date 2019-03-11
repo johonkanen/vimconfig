@@ -31,8 +31,7 @@ Plugin 'VundleVim/Vundle.vim'
 " 
 " Add file tree
 Plugin 'scrooloose/nerdtree.git'
-
-"Plugin 'vim-syntastic/syntastic.git'
+Plugin 'vim-syntastic/syntastic.git'
 "the ycm needs further configuration
 Plugin 'Valloric/YouCompleteMe.git'
 
@@ -40,7 +39,7 @@ Plugin 'Valloric/YouCompleteMe.git'
 Plugin 'SirVer/ultisnips'
 "since snippets are separate from engine, here are snippets
 Plugin 'honza/vim-snippets'
-
+Plugin 'ervandew/supertab'
 "vhdl vim package
 "Plugin 'suoto/vim-hdl'
 " All of your Plugins must be added before the following line
@@ -69,14 +68,14 @@ filetype plugin indent on    " required
 
 "syntastic recommended settings
 "
-"set statusline+=%#warningmsg#
-"set statusline+=%{SyntasticStatuslineFlag()}
-"set statusline+=%*
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
 
-"let g:syntastic_always_populate_loc_list = 1
-"let g:syntastic_auto_loc_list = 1
-"let g:syntastic_check_on_open = 1
-"let g:syntastic_check_on_wq = 0
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
 
 
 "set the appropriate colorscheme
@@ -85,8 +84,7 @@ filetype plugin indent on    " required
 :set nu rnu
 
 "open Nerdtree
-"autocmd vimenter * NERDTree
-
+autocmd vimenter * NERDTree
 
 "remap ctrl+movement keys to switch between splits
 nnoremap <C-J> <C-W><C-J>
@@ -113,9 +111,6 @@ nnoremap <space> za
 source $VIMRUNTIME/vimrc_example.vim
 "source $VIMRUNTIME/mswin.vim
 "behave mswin"
-
-
-
 
 "execute pathogen#infect()
 if has("gui_running")
