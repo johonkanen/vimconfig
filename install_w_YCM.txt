@@ -1,0 +1,8 @@
+1. install VIM
+2. install vundle
+3. install Visual Studio community version 15.9.7
+4. install python 3.5.2 to c:/ python35
+5. get vimrc from bitbucket
+6. compile ycm
+	- goto users/.vim/bundle/YouCompleteMe/
+	- type in install.py (--all/--clang-completer)

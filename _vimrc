@@ -35,7 +35,7 @@ Plugin 'scrooloose/nerdtree.git'
 "Plugin 'vim-syntastic/syntastic.git'
 
 "the ycm needs further configuration
-"Plugin 'Valloric/YouCompleteMe.git'
+Plugin 'Valloric/YouCompleteMe.git'
 
 "track ultisnippets 
 "Plugin 'SirVer/ultisnips'
