@@ -33,14 +33,13 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'scrooloose/nerdtree.git'
 
 "Plugin 'vim-syntastic/syntastic.git'
-
 "the ycm needs further configuration
 Plugin 'Valloric/YouCompleteMe.git'
 
 "track ultisnippets 
-"Plugin 'SirVer/ultisnips'
+Plugin 'SirVer/ultisnips'
 "since snippets are separate from engine, here are snippets
-"Plugin 'honza/vim-snippets'
+Plugin 'honza/vim-snippets'
 
 "vhdl vim package
 "Plugin 'suoto/vim-hdl'
