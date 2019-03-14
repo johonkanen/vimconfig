@@ -62,6 +62,7 @@ inoremap <C-h> <Left>
 inoremap <C-j> <Down>
 inoremap <C-k> <Up>
 inoremap <C-l> <Right>
+" switch between tabs 
 map <C-p> :tabp<CR>
 map <C-n> :tabn<CR>
 
@@ -86,18 +87,19 @@ set statusline+=%*
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
 map <C-s> :UltiSnipsEdit<CR>
-let g:UltiSnipsSnippetDirectories = ['~/.vim/'. 'Snippets']
+"map own snippets directory
+let g:UltiSnipsSnippetDirectories = [$VIM.'/Snippets']
 
 " make YCM compatible with UltiSnips (using supertab)
-let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
-let g:ycm_key_list_previous_completion = ['<C-b>', '<Up>']
+let g:ycm_key_list_select_completion = ['<tab>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<s-tab>', '<Up>']
 let g:ycm_semantic_triggers =  { 'c' : ['->', '.', '::', 're!gl'], 'objc': ['->', '.', 're!\[[_a-zA-Z]+\w*\s', 're!^\s*[^\W\d]\w*\s'], 'vhdl' : ['pro', 'sig', ':']}
 let g:SuperTabDefaultCompletionType = '<C-n>'
 
 " better key bindings for UltiSnipsExpandTrigger
 let g:UltiSnipsExpandTrigger = "<s-space>"
-let g:UltiSnipsJumpForwardTrigger = "<C-n>"
-let g:UltiSnipsJumpBackwardTrigger = "<C-b>"
+let g:UltiSnipsJumpForwardTrigger = "<s-space>"
+let g:UltiSnipsJumpBackwardTrigger = "<C-space>"
 
 
 "set the appropriate colorscheme

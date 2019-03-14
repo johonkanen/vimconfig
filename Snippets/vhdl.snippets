@@ -1,0 +1,31 @@
+snippet lib "std and numeric libraries"
+library ieee;
+	use ieee.std_logic_1164.all;
+	use ieee.numeric_std.all;
+endsnippet
+
+snippet sig "std signal"
+signal $1 : std_logic;
+endsnippet
+
+snippet sign "std vector"
+signal $1 : std_logic_vector($2 downto 0);
+endsnippet
+
+snippet var "std signal"
+variable $1 : std_logic;
+endsnippet
+
+snippet vari "std vector"
+variable $1 : std_logic_vector($2 downto 0);
+endsnippet
+
+snippet proc "clocked process"
+$1 : process(${2:clk})
+	$3
+begin
+	if rising_edge($2)
+
+	end if; --rising_edge
+end process $1;	
+endsnippet

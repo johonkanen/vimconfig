@@ -1,0 +1,6 @@
+*.swp
+vimfiles/*
+vim/*
+vim80/*
+testi/*
+*~
