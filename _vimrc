@@ -4,7 +4,7 @@ filetype off                  " required
 set encoding=utf-8
 
 " set the runtime path to include Vundle and initialize
-set rtp+=C:\Programs\Vim\vim80\bundle\Vundle.vim
+set rtp+=$VIM\vim80\bundle\Vundle.vim "C:\Programs\Vim\vim80\bundle\Vundle.vim
 call vundle#begin()
 " alternatively, pass a path where Vundle should install plugins
 "call vundle#begin('~/some/path/here')
@@ -66,12 +66,21 @@ inoremap <C-l> <Right>
 map <C-p> :tabp<CR>
 map <C-n> :tabn<CR>
 
+"remap ctrl+movement keys to switch between splits in normal mode
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+"set <space> for folding code from tab
+nnoremap <space> za
+
 " ==== NERDTREE
 let NERDTreeIgnore = ['__pycache__', '\.pyc$', '\.o$', '\.so$', '\.a$', '\.swp', '*\.swp', '\.swo', '\.swn', '\.swh', '\.swm', '\.swl', '\.swk', '\.sw*$', '[a-zA-Z]*egg[a-zA-Z]*', '.DS_Store', '.un']
 
 let NERDTreeShowHidden=1
 let g:NERDTreeWinPos="left"
 let g:NERDTreeDirArrows=0
+" toggle nerdtree with C-t
 map <C-t> :NERDTreeToggle<CR>
 
 " ==== Syntastic
@@ -79,20 +88,25 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+" add vhdl 2008 support to ghdl
+let g:syntastic_vhdl_ghdl_args = "--std=08 --ieee=synopsys"
+
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
+
 " ==== snippets
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
+"map C-s to edit ultisnips
 map <C-s> :UltiSnipsEdit<CR>
 "map own snippets directory
 let g:UltiSnipsSnippetDirectories = [$VIM.'/Snippets']
 
 " make YCM compatible with UltiSnips (using supertab)
-let g:ycm_key_list_select_completion = ['<tab>', '<Down>']
-let g:ycm_key_list_previous_completion = ['<s-tab>', '<Up>']
+let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<C-b>', '<Up>']
 let g:ycm_semantic_triggers =  { 'c' : ['->', '.', '::', 're!gl'], 'objc': ['->', '.', 're!\[[_a-zA-Z]+\w*\s', 're!^\s*[^\W\d]\w*\s'], 'vhdl' : ['pro', 'sig', ':']}
 let g:SuperTabDefaultCompletionType = '<C-n>'
 
@@ -107,16 +121,6 @@ let g:UltiSnipsJumpBackwardTrigger = "<C-space>"
 "set hybrid relative numbering 
 :set nu rnu
 
-"open Nerdtree
-"autocmd vimenter * NERDTree
-
-"remap ctrl+movement keys to switch between splits
-nnoremap <C-J> <C-W><C-J>
-nnoremap <C-K> <C-W><C-K>
-nnoremap <C-L> <C-W><C-L>
-nnoremap <C-H> <C-W><C-H>
-"set <space> for folding code from tab
-nnoremap <space> za
 
 
 :set guifont=courier_new:h9
