@@ -31,15 +31,19 @@ Plugin 'VundleVim/Vundle.vim'
 " 
 " Add file tree
 Plugin 'scrooloose/nerdtree.git'
+" syntax checking
 Plugin 'vim-syntastic/syntastic.git'
 "the ycm needs further configuration
 Plugin 'Valloric/YouCompleteMe.git'
-
 "track ultisnippets 
 Plugin 'SirVer/ultisnips'
 "since snippets are separate from engine, here are snippets
 Plugin 'honza/vim-snippets'
+"supertab, does something ?!?
 Plugin 'ervandew/supertab'
+"very nice tabulation funcitionality, needs to be learned first
+Plugin 'godlygeek/tabular'
+
 "vhdl vim package
 "Plugin 'suoto/vim-hdl'
 " All of your Plugins must be added before the following line
@@ -120,8 +124,6 @@ let g:UltiSnipsJumpBackwardTrigger = "<C-space>"
 :colorscheme torte
 "set hybrid relative numbering 
 :set nu rnu
-
-
 
 :set guifont=courier_new:h9
 
