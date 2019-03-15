@@ -9,9 +9,6 @@ call vundle#begin()
 " alternatively, pass a path where Vundle should install plugins
 "call vundle#begin('~/some/path/here')
 
-" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
-
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
 " plugin on GitHub repo
@@ -28,7 +25,9 @@ Plugin 'VundleVim/Vundle.vim'
 " Install L9 and avoid a Naming conflict if you've already installed a
 " different version somewhere else.
 " Plugin 'ascenator/L9', {'name': 'newL9'}
-" 
+ 
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
 " Add file tree
 Plugin 'scrooloose/nerdtree.git'
 " syntax checking
@@ -92,13 +91,12 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
-" add vhdl 2008 support to ghdl
+" add vhdl 2008 support to ghdl and nonstandard vhdl libraries
 let g:syntastic_vhdl_ghdl_args = "--std=08 --ieee=synopsys"
 
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
-
 
 " ==== snippets
 " If you want :UltiSnipsEdit to split your window.
@@ -118,7 +116,6 @@ let g:SuperTabDefaultCompletionType = '<C-n>'
 let g:UltiSnipsExpandTrigger = "<s-space>"
 let g:UltiSnipsJumpForwardTrigger = "<s-space>"
 let g:UltiSnipsJumpBackwardTrigger = "<C-space>"
-
 
 "set the appropriate colorscheme
 :colorscheme torte
@@ -142,7 +139,6 @@ source $VIMRUNTIME/vimrc_example.vim
 "source $VIMRUNTIME/mswin.vim
 "behave mswin"
 
-"execute pathogen#infect()
 if has("gui_running")
   function! ScreenFilename()
     if has('amiga')
@@ -230,4 +226,3 @@ function MyDiff()
     let &shellxquote=l:shxq_sav
   endif
 endfunction
-
