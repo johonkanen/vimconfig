@@ -1,11 +1,7 @@
-snippet lib "std and numeric libraries"
+snippet library "std and numeric libraries"
 library ieee;
 	use ieee.std_logic_1164.all;
 	use ieee.numeric_std.all;
-endsnippet
-
-snippet sig "std signal"
-signal $1 : std_logic;
 endsnippet
 
 snippet signal 
@@ -13,7 +9,7 @@ signal $1 : $2
 endsnippet
 
 snippet variable
-variable $1 : $2;
+variable $1 : $2
 endsnippet
 
 snippet process "clocked process"
@@ -35,7 +31,15 @@ snippet signed "signed x downto 0"
 signed($1 downto 0);
 endsnippet
 
-snippet test "simple" !b
+snippet std_logic_vector 
+std_logic_vector($1 downto 0);
+endsnippet
+
+snippet std_logic	
+std_logic;
+endsnippet
+
+snippet test_python "simple" !b
 `!p snip.rv = "hello"`
 endsnippet
 
