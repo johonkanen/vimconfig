@@ -134,6 +134,10 @@ let g:UltiSnipsJumpBackwardTrigger = "<C-space>"
 :set softtabstop=4
 
 ":winpos 600 200
+"open splits to the right and down of active split
+:set splitright
+:set splitbelow
+
 
 source $VIMRUNTIME/vimrc_example.vim
 "source $VIMRUNTIME/mswin.vim

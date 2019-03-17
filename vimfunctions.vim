@@ -1,4 +1,4 @@
-
+"vim functions for remembering last vim window position
 if has("gui_running")
   function! ScreenFilename()
     if has('amiga')
