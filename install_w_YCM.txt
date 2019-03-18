@@ -6,3 +6,5 @@
 6. compile ycm
 	- goto users/.vim/bundle/YouCompleteMe/
 	- type in install.py (--all/--clang-completer)
+
+for ghdl support, install llvm version of newest ghdl
