@@ -5,9 +5,9 @@ set encoding=utf-8
 
 " set the runtime path to include Vundle and initialize
 set rtp+=$VIM\vim80\bundle\Vundle.vim "C:\Programs\Vim\vim80\bundle\Vundle.vim
-call vundle#begin()
+"call vundle#begin()
 " alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
+call vundle#begin('$VIM\vim80\bundle')
 
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
