@@ -109,3 +109,15 @@ function! DeleteFileSwaps()
     echo "Reset swap file extension for file: ".expand('%')
 endfunction
 command! DeleteFileSwaps :call DeleteFileSwaps()
+
+" how to look for files and add them to the configuration
+"You can set up an autocmd to search for the configuration file in the current directory and upwards, and add it to the checker's options when found. For example for jscs:
+
+"function! FindConfig(prefix, what, where)
+"    let cfg = findfile(a:what, escape(a:where, ' ') . ';')
+"    return cfg !=# '' ? ' ' . a:prefix . ' ' . shellescape(cfg) : ''
+"endfunction
+
+"autocmd FileType javascript let b:syntastic_javascript_jscs_args =
+"    \ get(g:, 'syntastic_javascript_jscs_args', '') .
+"    \ FindConfig('-c', '.jscsrc', expand('<afile>:p:h', 1))
