@@ -127,8 +127,9 @@ let g:UltiSnipsJumpBackwardTrigger = "<C-space>"
 
 :set guifont=courier_new:h9
 
-:set softtabstop=4
-:set shiftwidth=4
+":set softtabstop=4
+":set shiftwidth=4
+:set tabstop=8 softtabstop=0 expandtab shiftwidth=4 smarttab
 
 :set guifont=courier_new
 :set lines=42 columns=110
