@@ -87,6 +87,7 @@ let g:NERDTreeWinPos="left"
 let g:NERDTreeDirArrows=0
 " toggle nerdtree with C-t
 map <C-t> :NERDTreeToggle<CR>
+au VimEnter *  NERDTree
 
 " ==== Syntastic
 let g:syntastic_always_populate_loc_list = 1
