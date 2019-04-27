@@ -42,6 +42,8 @@ Plugin 'honza/vim-snippets'
 Plugin 'ervandew/supertab'
 "very nice tabulation funcitionality, needs to be learned first
 Plugin 'godlygeek/tabular'
+"git plugin
+Plugin 'tpope/vim-fugitive'
 
 "vhdl vim package
 "Plugin 'suoto/vim-hdl'
@@ -78,7 +80,7 @@ nnoremap <C-H> <C-W><C-H>
 nnoremap <space> za
 
 " ==== NERDTREE
-let NERDTreeIgnore = ['__pycache__', '\.pyc$', '\.o$', '\.so$', '\.a$', '\.swp', '*\.swp', '\.swo', '\.swn', '\.swh', '\.swm', '\.swl', '\.swk', '\.sw*$', '[a-zA-Z]*egg[a-zA-Z]*', '.DS_Store', '.un']
+let NERDTreeIgnore = ['__pycache__', '\.pyc$', '\.o$', '\.so$', '\.a$', '\.swp', '*\.swp', '\.swo', '\.swn', '\.swh', '\.swm', '\.swl', '\.swk', '\.sw*$', '[a-zA-Z]*egg[a-zA-Z]*', '.DS_Store', '.un', '.*\~']
 
 let NERDTreeShowHidden=1
 let g:NERDTreeWinPos="left"
