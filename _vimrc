@@ -139,7 +139,7 @@ let g:UltiSnipsJumpBackwardTrigger = "<C-space>"
 
 ":winpos 600 200
 "open splits to the right and down of active split
-:set splitright
+":set splitright
 :set splitbelow
 
 
