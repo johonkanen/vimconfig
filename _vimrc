@@ -44,7 +44,8 @@ Plugin 'ervandew/supertab'
 Plugin 'godlygeek/tabular'
 "git plugin
 Plugin 'tpope/vim-fugitive'
-
+" change root directory
+Plugin 'airblade/vim-rooter'
 "vhdl vim package
 "Plugin 'suoto/vim-hdl'
 " All of your Plugins must be added before the following line
