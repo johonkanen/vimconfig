@@ -4,6 +4,11 @@ library ieee;
 	use ieee.numeric_std.all;
 endsnippet
 
+snippet library_work "std and numeric libraries"
+library work;
+	use work.$1.all;
+endsnippet
+
 snippet signal 
 signal $1 : $2 
 endsnippet
@@ -105,4 +110,15 @@ snippet package
 package $1 is
 
 end $1;
+endsnippet
+
+snippet record
+type $1 is record
+	$2`!p snip.rv=complete(t[2],['data : std_logic;'])`
+end record;
+endsnippet
+
+snippet type_states
+type t_$1 is ($2);
+$3`!p snip.rv=complete(t[3],['variable', 'signal'])` st_$1 : t_$1;
 endsnippet

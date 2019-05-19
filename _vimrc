@@ -88,7 +88,7 @@ let g:NERDTreeWinPos="left"
 let g:NERDTreeDirArrows=0
 " toggle nerdtree with C-t
 map <C-t> :NERDTreeToggle<CR>
-au VimEnter *  NERDTree
+"au VimEnter *  NERDTree
 
 " ==== Syntastic
 let g:syntastic_always_populate_loc_list = 1
@@ -130,7 +130,7 @@ let g:UltiSnipsJumpBackwardTrigger = "<C-space>"
 
 ":set softtabstop=4
 ":set shiftwidth=4
-:set tabstop=8 softtabstop=0 expandtab shiftwidth=4 smarttab
+:set softtabstop=0 expandtab shiftwidth=4 smarttab
 
 :set guifont=courier_new
 :set lines=42 columns=110
