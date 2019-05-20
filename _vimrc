@@ -44,7 +44,8 @@ Plugin 'ervandew/supertab'
 Plugin 'godlygeek/tabular'
 "git plugin
 Plugin 'tpope/vim-fugitive'
-
+" change root directory
+Plugin 'airblade/vim-rooter'
 "vhdl vim package
 "Plugin 'suoto/vim-hdl'
 " All of your Plugins must be added before the following line
@@ -129,7 +130,7 @@ let g:UltiSnipsJumpBackwardTrigger = "<C-space>"
 
 ":set softtabstop=4
 ":set shiftwidth=4
-:set tabstop=8 softtabstop=0 expandtab shiftwidth=4 smarttab
+:set softtabstop=0 expandtab shiftwidth=4 smarttab
 
 :set guifont=courier_new
 :set lines=42 columns=110
