@@ -71,6 +71,7 @@ inoremap <C-l> <Right>
 " switch between tabs 
 map <C-p> :tabp<CR>
 map <C-n> :tabn<CR>
+map <C-e> :!explorer .<CR>
 
 "remap ctrl+movement keys to switch between splits in normal mode
 nnoremap <C-J> <C-W><C-J>
