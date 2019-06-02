@@ -1,4 +1,4 @@
-set nocompatible              " be iMproved, required
+" set nocompatible              " be iMproved, required
 filetype off                  " required
 "needed for ycm
 set encoding=utf-8
@@ -46,6 +46,10 @@ Plugin 'godlygeek/tabular'
 Plugin 'tpope/vim-fugitive'
 " change root directory
 Plugin 'airblade/vim-rooter'
+" easy commenting
+Plugin 'tpope/vim-commentary'
+" extended vim motions
+Plugin 'easymotion/vim-easymotion'
 "vhdl vim package
 "Plugin 'suoto/vim-hdl'
 " All of your Plugins must be added before the following line
@@ -71,8 +75,13 @@ inoremap <C-l> <Right>
 " switch between tabs 
 map <C-p> :tabp<CR>
 map <C-n> :tabn<CR>
-map <C-e> :!explorer .<CR>
+" map <C-e> :!explorer .<CR>
 
+" easymotion mappings, 
+map <C-w> \\
+
+"map ctrl-i to toggle comment
+map <C-i> gcc
 "remap ctrl+movement keys to switch between splits in normal mode
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>

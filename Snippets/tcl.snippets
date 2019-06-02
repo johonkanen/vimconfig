@@ -1,0 +1,12 @@
+snippet read_vhdl 
+read_vhdl $1
+endsnippet
+
+
+snippet assemble_design_tcl "template for tcl batch project"
+read_vhdl $1
+
+
+synth_design -top top -part xc7s15ftgb196-2
+write_checkpoint -force $outputDir/post_synth
+endsnippet
