@@ -17,6 +17,10 @@ snippet variable
 variable $1 : $2
 endsnippet
 
+snippet constant 
+constant $1 : $2`!p snip.rv=complete(t[2],['std_logic_vector', 'unsigned', 'signed'])`($3 downto 0) := $4"$5";
+endsnippet
+
 snippet process "clocked process"
 $1 : process(${2:clk})
 	$3
@@ -115,6 +119,7 @@ endsnippet
 snippet library
 library $1;
 	use $1.$2.all;
+endsnippet
 
 snippet record
 type $1 is record
@@ -125,4 +130,27 @@ endsnippet
 snippet type_states
 type t_$1 is ($2);
 $3`!p snip.rv=complete(t[3],['variable', 'signal'])` st_$1 : t_$1;
+endsnippet
+
+
+snippet architecture
+architecture $1 of $2 is
+$3
+
+begin
+
+$4
+
+end $1;
+endsnippet
+
+snippet architecture
+	architecture ${1:rtl} of ${2:`vim_snippets#Filename()`} is
+
+		${3}
+
+	begin
+
+
+	end $1;
 endsnippet

@@ -79,6 +79,9 @@ map <C-n> :tabn<CR>
 
 " easymotion mappings, 
 map <C-w> \\
+map <s-w> \\w
+map <s-e> \\e
+map <s-b> \\b
 
 "map ctrl-i to toggle comment
 map <C-i> gcc
@@ -134,7 +137,7 @@ let g:UltiSnipsJumpBackwardTrigger = "<C-space>"
 "set the appropriate colorscheme
 :colorscheme torte
 "set hybrid relative numbering 
-:set nu rnu
+:set rnu
 
 :set guifont=courier_new:h9
 
