@@ -138,6 +138,7 @@ let g:UltiSnipsJumpBackwardTrigger = "<C-space>"
 :colorscheme torte
 "set hybrid relative numbering 
 :set rnu
+:set nu
 
 :set guifont=courier_new:h9
 

@@ -4,6 +4,10 @@ library ieee;
 	use ieee.numeric_std.all;
 endsnippet
 
+#jihuu
+# snippet package
+# package ${1:`vim_snippets#Filename()`} is
+
 snippet library_work "std and numeric libraries"
 library work;
 	use work.$1.all;
@@ -110,12 +114,6 @@ CASE $1 is
 end CASE; --$1
 endsnippet
 
-snippet package
-package $1 is
-
-end $1;
-endsnippet
-
 snippet library
 library $1;
 	use $1.$2.all;
@@ -144,13 +142,3 @@ $4
 end $1;
 endsnippet
 
-snippet architecture
-	architecture ${1:rtl} of ${2:`vim_snippets#Filename()`} is
-
-		${3}
-
-	begin
-
-
-	end $1;
-endsnippet
