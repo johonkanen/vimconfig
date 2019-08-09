@@ -76,6 +76,8 @@ inoremap <C-l> <Right>
 map <C-p> :tabp<CR>
 map <C-n> :tabn<CR>
 " map <C-e> :!explorer .<CR>
+map <F4> :execute "vimgrep /" . expand("<cword>") . "/j *" <Bar> cw<CR>
+map <F5> :execute "vimgrep /" . expand("<cword>") . "/j **" <Bar> cw<CR>
 
 " easymotion mappings, 
 map <C-w> \\
@@ -84,7 +86,6 @@ map <s-e> \\e
 map <s-b> \\b
 
 "map ctrl-i to toggle comment
-map <C-i> gcc
 "remap ctrl+movement keys to switch between splits in normal mode
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
@@ -94,7 +95,7 @@ nnoremap <C-H> <C-W><C-H>
 nnoremap <space> za
 
 " ==== NERDTREE
-let NERDTreeIgnore = ['__pycache__', '\.pyc$', '\.o$', '\.so$', '\.a$', '\.swp', '*\.swp', '\.swo', '\.swn', '\.swh', '\.swm', '\.swl', '\.swk', '\.sw*$', '[a-zA-Z]*egg[a-zA-Z]*', '.DS_Store', '.un', '.*\~', '.vcd', '.cf']
+let NERDTreeIgnore = ['__pycache__', '\.pyc$', '\.o$', '\.so$', '\.a$', '\.swp', '*\.swp', '\.swo', '\.swn', '\.swh', '\.swm', '\.swl', '\.swk', '\.sw*$', '[a-zA-Z]*egg[a-zA-Z]*', '.DS_Store', '.un', '.*\~', '.vcd', '.cf', '.xml', '.ngc', '.ncd', '.ngd', '.ngm', '.xrpt', '.lst', '.xpi', '.twx', '.ptwx', '.pad', '.bld', '.bit', '.bin', '.bgn', '.lso']
 
 let NERDTreeShowHidden=1
 let g:NERDTreeWinPos="left"
@@ -109,7 +110,7 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 " add vhdl 2008 support to ghdl and nonstandard vhdl libraries
-let g:syntastic_vhdl_ghdl_args = "--std=08 --ieee=synopsys"
+let g:syntastic_vhdl_ghdl_args = "--ieee=synopsys"
 
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
@@ -140,13 +141,12 @@ let g:UltiSnipsJumpBackwardTrigger = "<C-space>"
 :set rnu
 :set nu
 
-:set guifont=courier_new:h9
+:set guifont=courier_new:h10
 
 ":set softtabstop=4
 ":set shiftwidth=4
 :set softtabstop=0 expandtab shiftwidth=4 smarttab
 
-:set guifont=courier_new
 :set lines=42 columns=110
 
 :set tabstop=4

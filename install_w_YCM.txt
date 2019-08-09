@@ -5,6 +5,6 @@
 5. get vimrc from bitbucket
 6. compile ycm
 	- goto users/.vim/bundle/YouCompleteMe/
-	- type in install.py (--all/--clang-completer)
+	- python install.py --msvc 15--all
 
 for ghdl support, install llvm version of newest ghdl
