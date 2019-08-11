@@ -50,6 +50,8 @@ Plugin 'airblade/vim-rooter'
 Plugin 'tpope/vim-commentary'
 " extended vim motions
 Plugin 'easymotion/vim-easymotion'
+" fuzzy finder
+Plugin 'junegunn/fzf'
 "vhdl vim package
 "Plugin 'suoto/vim-hdl'
 " All of your Plugins must be added before the following line
@@ -77,7 +79,7 @@ map <C-p> :tabp<CR>
 map <C-n> :tabn<CR>
 " map <C-e> :!explorer .<CR>
 
-"grep current folder with current file extension
+"grep current file
 map <F3> :execute "vimgrep /" . expand("<cword>") . "/%" <Bar> cw<CR>
 "grep current folder with current file extension
 map <F4> :execute "vimgrep /" . expand("<cword>") . "/j *." . expand("%:e") <Bar> cw<CR>
@@ -100,7 +102,7 @@ nnoremap <C-H> <C-W><C-H>
 nnoremap <space> za
 
 " ==== NERDTREE
-let NERDTreeIgnore = ['__pycache__', '\.pyc$', '\.o$', '\.so$', '\.a$', '\.swp', '*\.swp', '\.swo', '\.swn', '\.swh', '\.swm', '\.swl', '\.swk', '\.sw*$', '[a-zA-Z]*egg[a-zA-Z]*', '.DS_Store', '.un', '.*\~', '.vcd', '.cf', '.xml', '.ngc', '.ncd', '.ngd', '.ngm', '.xrpt', '.lst', '.xpi', '.twx', '.ptwx', '.pad', '.bld', '.bit', '.bin', '.bgn', '.lso']
+let NERDTreeIgnore = ['__pycache__', '\.pyc$', '\.o$', '\.so$', '\.a$', '\.swp', '*\.swp', '\.swo', '\.swn', '\.swh', '\.swm', '\.swl', '\.swk', '\.sw*$', '[a-zA-Z]*egg[a-zA-Z]*', '\.DS_Store', '\.un', '\.*\~', '\.vcd', '\.cf', '\.xml', '\.ngc', '\.ncd', '\.ngd', '\.ngm', '\.xrpt', '\.lst', '\.xpi', '\.twx', '\.ptwx', '\.pad', '\.bld', '\.bit', '\.bin', '\.bgn', '\.lso']
 
 let NERDTreeShowHidden=1
 let g:NERDTreeWinPos="left"
