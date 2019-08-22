@@ -93,6 +93,7 @@ map <s-e> \\e
 map <s-b> \\b
 
 "map ctrl-i to toggle comment
+map <C-i> gcc
 "remap ctrl+movement keys to switch between splits in normal mode
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
@@ -168,5 +169,17 @@ let g:UltiSnipsJumpBackwardTrigger = "<C-space>"
 source $VIMRUNTIME/vimrc_example.vim
 "source $VIMRUNTIME/mswin.vim
 "behave mswin"
-
-source $VIM/vimfunctions.vim
+" function! Rg(...)
+"   let l:output = system("rg --vimgrep ".join(a:000, " "))
+"   let l:list = split(l:output, "\n")
+"   let l:ql = []
+"   for l:item in l:list
+"     let sit = split(l:item, ":")
+"     call add(l:ql,
+"         \ {"filename": sit[0], "lnum": sit[1], "col": sit[2], "text": sit[3]})
+"   endfor
+"   call setqflist(l:ql, 'r')
+"   echo 'Rg results: '.len(l:ql)
+" endfunction
+" command! -nargs=* Rg call Rg(<q-args>)
+" source $VIM/vimfunctions.vim
