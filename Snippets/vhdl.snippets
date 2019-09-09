@@ -5,8 +5,11 @@ library ieee;
 endsnippet
 
 #jihuu
-# snippet package
-# package ${1:`vim_snippets#Filename()`} is
+snippet package
+package ${1:`Filename()`} is
+
+end package;
+endsnippet
 
 snippet library_work "std and numeric libraries"
 library work;
@@ -180,4 +183,18 @@ is
 begin
 	$4
 end $1;
+endsnippet
+
+snippet danfoss_sw_header
+--------------------------------------------------------------------------------------------------------------------------------
+-- This confidential and proprietary software may be used only as authorized by a licensing agreement from Danfoss Editron Oy
+--
+-- (C) COPYRIGHT 2019 DANFOSS EDITRON OY, ALL RIGHTS RESERVED
+--
+-- Description
+--   $1
+--
+--   
+--
+--------------------------------------------------------------------------------------------------------------------------------
 endsnippet

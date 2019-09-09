@@ -54,6 +54,8 @@ Plugin 'easymotion/vim-easymotion'
 Plugin 'junegunn/fzf'
 "vhdl vim package
 "Plugin 'suoto/vim-hdl'
+"multi monitor support
+" Plugin 'codeape2/vim-multiple-monitors'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -92,8 +94,6 @@ map <s-w> \\w
 map <s-e> \\e
 map <s-b> \\b
 
-"map ctrl-i to toggle comment
-map <C-i> gcc
 "remap ctrl+movement keys to switch between splits in normal mode
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
@@ -167,7 +167,7 @@ let g:UltiSnipsJumpBackwardTrigger = "<C-space>"
 
 
 source $VIMRUNTIME/vimrc_example.vim
-"source $VIMRUNTIME/mswin.vim
+" source $VIMRUNTIME/mswin.vim
 "behave mswin"
 " function! Rg(...)
 "   let l:output = system("rg --vimgrep ".join(a:000, " "))
@@ -182,4 +182,4 @@ source $VIMRUNTIME/vimrc_example.vim
 "   echo 'Rg results: '.len(l:ql)
 " endfunction
 " command! -nargs=* Rg call Rg(<q-args>)
-" source $VIM/vimfunctions.vim
+ source $VIM/vimfunctions.vim
