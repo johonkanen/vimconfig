@@ -87,7 +87,6 @@ map <F3> :execute "vimgrep /" . expand("<cword>") . "/%" <Bar> cw<CR>
 map <F4> :execute "vimgrep /" . expand("<cword>") . "/j *." . expand("%:e") <Bar> cw<CR>
 "grep current folder recursively with current file extension
 map <F5> :execute "vimgrep /" . expand("<cword>") . "/j **/*." . expand("%:e") <Bar> cw<CR>
-
 " easymotion mappings, 
 map <C-w> \\
 map <s-w> \\w
@@ -101,6 +100,9 @@ nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 "set <space> for folding code from tab
 nnoremap <space> za
+"remap Tab in normal mode to apply supertab
+nnoremap <s-Tab> :Tab 
+
 
 " ==== NERDTREE
 let NERDTreeIgnore = ['__pycache__', '\.pyc$', '\.o$', '\.so$', '\.a$', '\.swp', '*\.swp', '\.swo', '\.swn', '\.swh', '\.swm', '\.swl', '\.swk', '\.sw*$', '[a-zA-Z]*egg[a-zA-Z]*', '\.DS_Store', '\.un', '\.*\~', '\.vcd', '\.cf', '\.xml', '\.ngc', '\.ncd', '\.ngd', '\.ngm', '\.xrpt', '\.lst', '\.xpi', '\.twx', '\.ptwx', '\.pad', '\.bld', '\.bit', '\.bin', '\.bgn', '\.lso']
