@@ -118,9 +118,9 @@ au VimEnter *  NERDTree
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
+let g:syntastic_check_on_wq = 1
 " add vhdl 2008 support to ghdl and nonstandard vhdl libraries
-let g:syntastic_vhdl_ghdl_args = "--ieee=synopsys"
+let g:syntastic_vhdl_ghdl_args = "--ieee=synopsys", "warn-no-library"
 
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
