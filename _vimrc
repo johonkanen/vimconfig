@@ -1,4 +1,4 @@
-" set nocompatible              " be iMproved, required
+set nocompatible              " be iMproved, required
 filetype off                  " required
 "needed for ycm
 set encoding=utf-8
@@ -47,7 +47,9 @@ Plugin 'tpope/vim-fugitive'
 " change root directory
 Plugin 'airblade/vim-rooter'
 " easy commenting
-Plugin 'tpope/vim-commentary'
+" Plugin 'tpope/vim-commentary'
+Plugin 'tomtom/tcomment_vim'
+
 " extended vim motions
 Plugin 'easymotion/vim-easymotion'
 " fuzzy finder
@@ -70,6 +72,8 @@ filetype plugin indent on    " required
 "
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
+"
+let g:pymode_python = 'python3'
 "
 "==== remap C-movement in insert mode
 inoremap <C-h> <Left>
@@ -105,7 +109,9 @@ nnoremap <s-Tab> :Tab
 
 
 " ==== NERDTREE
-let NERDTreeIgnore = ['__pycache__', '\.pyc$', '\.o$', '\.so$', '\.a$', '\.swp', '*\.swp', '\.swo', '\.swn', '\.swh', '\.swm', '\.swl', '\.swk', '\.sw*$', '[a-zA-Z]*egg[a-zA-Z]*', '\.DS_Store', '\.un', '\.*\~', '\.vcd', '\.cf', '\.xml', '\.ngc', '\.ncd', '\.ngd', '\.ngm', '\.xrpt', '\.lst', '\.xpi', '\.twx', '\.ptwx', '\.pad', '\.bld', '\.bit', '\.bin', '\.bgn', '\.lso']
+let NERDTreeIgnore = ['__pycache__', '\.pyc$', '\.o$', '\.so$', '\.a$', '\.swp', '*\.swp', '\.swo', '\.swn', '\.swh', '\.swm', '\.swl', '\.swk', '\.sw*$', '[a-zA-Z]*egg[a-zA-Z]*', '\.DS_Store', '\.un', '\.*\~', '\.vcd', '\.cf', '\.xml', '\.ngc', '\.ncd', '\.ngd', '\.ngm', '\.xrpt', '\.lst', '\.xpi', '\.twx', '\.ptwx', '\.pad', '\.bld', '\.bit', '\.bin', '\.bgn', '\.lso', '.git']
+"
+" let NERDTreeIgnore = ['\.sw*$']
 
 let NERDTreeShowHidden=1
 let g:NERDTreeWinPos="left"
@@ -120,7 +126,7 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 1
 " add vhdl 2008 support to ghdl and nonstandard vhdl libraries
-let g:syntastic_vhdl_ghdl_args = "--ieee=synopsys", "warn-no-library"
+let g:syntastic_vhdl_ghdl_args = "--ieee=synopsys"
 
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
@@ -144,6 +150,8 @@ let g:SuperTabDefaultCompletionType = '<C-n>'
 let g:UltiSnipsExpandTrigger = "<s-space>"
 let g:UltiSnipsJumpForwardTrigger = "<s-space>"
 let g:UltiSnipsJumpBackwardTrigger = "<C-space>"
+
+
 
 "set the appropriate colorscheme
 :colorscheme torte

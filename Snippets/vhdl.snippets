@@ -5,15 +5,15 @@ library ieee;
 endsnippet
 
 #jihuu
-# snippet package
-# package ${1:`Filename()`} is
+snippet package
+package ${1:`Filename()`} is
 
-# end package $1;
-# endsnippet
+end package $1;
+endsnippet
 
-snippet library_work "std and numeric libraries"
-library work;
-	use work.$1.all;
+snippet library_work "use library"
+library $1;
+	use $1.$2.${3:all};
 endsnippet
 
 
@@ -22,7 +22,7 @@ variable $1 : $2
 endsnippet
 
 snippet constant 
-constant $1 : $2`!p snip.rv=complete(t[2],['std_logic_vector', 'unsigned', 'signed'])`($3 downto 0) := $4"$5";
+constant $1 : $2 := $3;
 endsnippet
 
 snippet process "clocked process"
@@ -40,6 +40,17 @@ begin
 end process $1;	
 endsnippet
 
+snippet process2 "asynchronous reset in clocked process"
+$1 : process(${2:clk}, ${3:rstn})
+begin
+	if $3 = ${4:'0'} then
+	-- reset state
+
+	elsif rising_edge($2) then
+
+	end if; -- rstn
+end process $1;	
+endsnippet
 
 snippet process_unclocked "unclocked process"
 $1 : process(${2:clk})
@@ -197,4 +208,58 @@ snippet danfoss_sw_header
 --   
 --
 --------------------------------------------------------------------------------------------------------------------------------
+endsnippet
+
+snippet testbench
+LIBRARY ieee  ; 
+LIBRARY std  ; 
+    USE ieee.NUMERIC_STD.all  ; 
+    USE ieee.std_logic_1164.all  ; 
+    USE ieee.std_logic_textio.all  ; 
+    use ieee.math_real.all;
+    USE std.textio.all  ; 
+
+entity tb_$1 is
+end;
+
+architecture sim of tb_$1 is
+    signal rstn : std_logic;
+
+    signal simulation_running : boolean;
+    signal simulator_clock : std_logic;
+    constant clock_per : time := 1 ns;
+    constant clock_half_per : time := 0.5 ns;
+	constant simtime_in_clocks : 50;
+
+
+begin
+
+    simtime : process
+    begin
+        simulation_running <= true;
+        wait for simtime_in_clocks*clock_per;
+        simulation_running <= false;
+        wait;
+    end process simtime;	
+
+
+    sim_clock_gen : process
+    begin
+        modulator_clock <= '0';
+        rstn <= '0';
+		simulator_clock <= '0';
+        wait for clock_half_per;
+        while simulation_running loop
+            wait for clock_half_per;
+                rstn <= '1';
+                simulator_clock <= not simulator_clock;
+            end loop;
+        wait;
+    end process;
+
+end sim;
+endsnippet
+
+snippet array
+type $1 is array (integer range 0 to $2) of $3;
 endsnippet
