@@ -49,6 +49,8 @@ Plugin 'airblade/vim-rooter'
 " easy commenting
 " Plugin 'tpope/vim-commentary'
 Plugin 'tomtom/tcomment_vim'
+" camel/snake case motions
+Plugin 'bkad/CamelCaseMotion'
 
 " extended vim motions
 Plugin 'easymotion/vim-easymotion'
@@ -106,6 +108,15 @@ nnoremap <C-H> <C-W><C-H>
 nnoremap <space> za
 "remap Tab in normal mode to apply supertab
 nnoremap <s-Tab> :Tab 
+
+map <silent> w <Plug>CamelCaseMotion_w
+map <silent> b <Plug>CamelCaseMotion_b
+map <silent> e <Plug>CamelCaseMotion_e
+map <silent> ge <Plug>CamelCaseMotion_ge
+sunmap w
+sunmap b
+sunmap e
+sunmap ge
 
 
 " ==== NERDTREE
