@@ -229,7 +229,7 @@ architecture sim of tb_$1 is
     signal simulator_clock : std_logic;
     constant clock_per : time := 1 ns;
     constant clock_half_per : time := 0.5 ns;
-	constant simtime_in_clocks : 50;
+	constant simtime_in_clocks : integer := 50;
 
 
 begin
@@ -245,7 +245,7 @@ begin
 
     sim_clock_gen : process
     begin
-        modulator_clock <= '0';
+        simulator_clock <= '0';
         rstn <= '0';
 		simulator_clock <= '0';
         wait for clock_half_per;
