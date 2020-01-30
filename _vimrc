@@ -58,6 +58,7 @@ Plugin 'junegunn/fzf'
 "Plugin 'suoto/vim-hdl'
 "multi monitor support
 " Plugin 'codeape2/vim-multiple-monitors'
+Plugin 'Xuyuanp/nerdtree-git-plugin'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -117,7 +118,7 @@ let NERDTreeShowHidden=1
 let g:NERDTreeWinPos="left"
 let g:NERDTreeDirArrows=0
 " toggle nerdtree with C-t
-map <C-t> :NERDTreeToggle<CR>
+map <C-t> :NERDTreeFind<CR>
 au VimEnter *  NERDTree
 
 " ==== Syntastic
