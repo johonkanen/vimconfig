@@ -49,6 +49,8 @@ Plugin 'airblade/vim-rooter'
 " easy commenting
 " Plugin 'tpope/vim-commentary'
 Plugin 'tomtom/tcomment_vim'
+" camel/snake case motions
+Plugin 'bkad/CamelCaseMotion'
 
 " extended vim motions
 Plugin 'easymotion/vim-easymotion'
@@ -58,7 +60,7 @@ Plugin 'junegunn/fzf'
 "Plugin 'suoto/vim-hdl'
 "multi monitor support
 " Plugin 'codeape2/vim-multiple-monitors'
-Plugin 'Xuyuanp/nerdtree-git-plugin'
+" Plugin 'Xuyuanp/nerdtree-git-plugin'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -108,6 +110,15 @@ nnoremap <space> za
 "remap Tab in normal mode to apply supertab
 nnoremap <s-Tab> :Tab 
 
+" map <silent> w <Plug>CamelCaseMotion_w
+" map <silent> b <Plug>CamelCaseMotion_b
+" map <silent> e <Plug>CamelCaseMotion_e
+" map <silent> ge <Plug>CamelCaseMotion_ge
+" sunmap w
+" sunmap b
+" sunmap e
+" sunmap ge
+
 
 " ==== NERDTREE
 let NERDTreeIgnore = ['__pycache__', '\.pyc$', '\.o$', '\.so$', '\.a$', '\.swp', '*\.swp', '\.swo', '\.swn', '\.swh', '\.swm', '\.swl', '\.swk', '\.sw*$', '[a-zA-Z]*egg[a-zA-Z]*', '\.DS_Store', '\.un', '\.*\~', '\.vcd', '\.cf', '\.xml', '\.ngc', '\.ncd', '\.ngd', '\.ngm', '\.xrpt', '\.lst', '\.xpi', '\.twx', '\.ptwx', '\.pad', '\.bld', '\.bit', '\.bin', '\.bgn', '\.lso', '.git']
@@ -117,6 +128,7 @@ let NERDTreeIgnore = ['__pycache__', '\.pyc$', '\.o$', '\.so$', '\.a$', '\.swp',
 let NERDTreeShowHidden=1
 let g:NERDTreeWinPos="left"
 let g:NERDTreeDirArrows=0
+let g:NERDTreeWinSize=50
 " toggle nerdtree with C-t
 map <C-t> :NERDTreeFind<CR>
 au VimEnter *  NERDTree
@@ -170,6 +182,7 @@ let g:UltiSnipsJumpBackwardTrigger = "<C-space>"
 
 :set tabstop=4
 :set softtabstop=4
+
 
 ":winpos 600 200
 "open splits to the right and down of active split

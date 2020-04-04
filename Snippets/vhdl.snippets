@@ -227,6 +227,7 @@ architecture sim of tb_$1 is
 
     signal simulation_running : boolean;
     signal simulator_clock : std_logic;
+    signal clocked_reset : std_logic;
     constant clock_per : time := 1 ns;
     constant clock_half_per : time := 0.5 ns;
 	constant simtime_in_clocks : integer := 50;
@@ -234,6 +235,7 @@ architecture sim of tb_$1 is
 
 begin
 
+------------------------------------------------------------------------
     simtime : process
     begin
         simulation_running <= true;
@@ -242,12 +244,12 @@ begin
         wait;
     end process simtime;	
 
-
+------------------------------------------------------------------------
     sim_clock_gen : process
     begin
         simulator_clock <= '0';
         rstn <= '0';
-		simulator_clock <= '0';
+        simulator_clock <= '0';
         wait for clock_half_per;
         while simulation_running loop
             wait for clock_half_per;
@@ -256,7 +258,20 @@ begin
             end loop;
         wait;
     end process;
+------------------------------------------------------------------------
 
+    clocked_reset_generator : process(simulator_clock, rstn)
+    begin
+        if rstn = '0' then
+        -- reset state
+            clocked_reset <= '0';
+    
+        elsif rising_edge(simulator_clock) then
+            clocked_reset <= '1';
+    
+        end if; -- rstn
+    end process clocked_reset_generator;	
+------------------------------------------------------------------------
 end sim;
 endsnippet
 
