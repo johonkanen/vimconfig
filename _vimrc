@@ -88,6 +88,7 @@ map <C-p> :tabp<CR>
 map <C-n> :tabn<CR>
 " map <C-e> :!explorer .<CR>
 
+map <F2> :!start explorer /select,%:p
 "grep current file
 map <F3> :execute "vimgrep /" . expand("<cword>") . "/%" <Bar> cw<CR>
 "grep current folder with current file extension
@@ -95,7 +96,7 @@ map <F4> :execute "vimgrep /" . expand("<cword>") . "/j *." . expand("%:e") <Bar
 "grep current folder recursively with current file extension
 map <F5> :execute "vimgrep /" . expand("<cword>") . "/j **/*." . expand("%:e") <Bar> cw<CR>
 " easymotion mappings, 
-map <C-w> \\
+map <C-w> :vs /select,%p/
 map <s-w> \\w
 map <s-e> \\e
 map <s-b> \\b
