@@ -56,6 +56,8 @@ Plugin 'bkad/CamelCaseMotion'
 Plugin 'easymotion/vim-easymotion'
 " fuzzy finder
 Plugin 'junegunn/fzf'
+"
+Plugin 'airblade/vim-gitgutter'
 "vhdl vim package
 "Plugin 'suoto/vim-hdl'
 "multi monitor support
@@ -165,7 +167,7 @@ let g:UltiSnipsExpandTrigger = "<s-space>"
 let g:UltiSnipsJumpForwardTrigger = "<s-space>"
 let g:UltiSnipsJumpBackwardTrigger = "<C-space>"
 
-
+" let g:gitgutter_git_executable = 'C:\Programs\Git\bin\git.exe'     
 
 "set the appropriate colorscheme
 :colorscheme torte
