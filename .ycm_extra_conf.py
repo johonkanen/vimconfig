@@ -14,10 +14,14 @@ BASE_FLAGS = [
         '-fexceptions',
         '-ferror-limit=10000',
         '-DNDEBUG',
-        '-std=c++11',
-        '-xc++',
-        '-I/usr/lib/',
-        '-I/usr/include/'
+        # '-std=c++11',
+        '-std=c99',
+        '-xc',
+        # '-I\usr\lib\',
+        # '-isystem/../../vcpkg/packages/pdcurses_x86-windows/include',
+        # '-isystem/../vcpkg/packages/pdcurses_x86-windows/include',
+        # '-isystem/../../vcpkg/packages/pdcurses_x86-windows/include',
+        '-I','C:\\Users\\Jari\\mycodeprojects\\vcpkg\\packages\\pdcurses_x86-windows\\include'
         ]
 
 SOURCE_EXTENSIONS = [
