@@ -12,16 +12,14 @@ BASE_FLAGS = [
         '-Wno-long-long',
         '-Wno-variadic-macros',
         '-fexceptions',
-        '-ferror-limit=10000',
+        # '-ferror-limit=10000',
         '-DNDEBUG',
-        # '-std=c++11',
-        '-std=c99',
+        '-std=c++11',
+        # '-std=c99',
         '-xc',
-        # '-I\usr\lib\',
-        # '-isystem/../../vcpkg/packages/pdcurses_x86-windows/include',
-        # '-isystem/../vcpkg/packages/pdcurses_x86-windows/include',
-        # '-isystem/../../vcpkg/packages/pdcurses_x86-windows/include',
-        '-I','C:\\Users\\Jari\\mycodeprojects\\vcpkg\\packages\\pdcurses_x86-windows\\include'
+        '-I','C:/Users/Jari/mycodeprojects/vcpkg/packages/pdcurses_x86-windows/include',
+        '-I','C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um',
+        '-isystem','./'
         ]
 
 SOURCE_EXTENSIONS = [
@@ -35,7 +33,8 @@ SOURCE_EXTENSIONS = [
 
 SOURCE_DIRECTORIES = [
         'src',
-        'lib'
+        'lib',
+        'source'
         ]
 
 HEADER_EXTENSIONS = [
