@@ -1,10 +1,12 @@
 1. install VIM
 2. install vundle
-3. install Visual Studio community version 15.9.7
+3. install Visual Studio community
 4. install python 3.5.2 to c:/ python35
 5. get vimrc from bitbucket
 6. compile ycm
 	- goto users/.vim/bundle/YouCompleteMe/
 	- python install.py --msvc 15--all
+
+cmake -G "Visual Studio 16 2019" -DPATH_TO_LLVM_ROOT=C:/Programs/LLVM/ . C:/Programs/Vim/vim80/bundle/YouCompleteMe/third_party/ycmd/cpp -DPYTHON_INCLUDE_DIR=C:\Python35\include -DPYTHON_LIBRARY=C:\Python35\libs\python35.lib -DUSE_PYTHON2=OFF
 
 for ghdl support, install llvm version of newest ghdl
