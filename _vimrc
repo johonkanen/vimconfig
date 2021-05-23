@@ -56,11 +56,15 @@ Plugin 'bkad/CamelCaseMotion'
 Plugin 'easymotion/vim-easymotion'
 " fuzzy finder
 Plugin 'junegunn/fzf'
+"
+Plugin 'airblade/vim-gitgutter'
 "vhdl vim package
 "Plugin 'suoto/vim-hdl'
 "multi monitor support
 " Plugin 'codeape2/vim-multiple-monitors'
 " Plugin 'Xuyuanp/nerdtree-git-plugin'
+" vim intendation guides
+Plugin 'nathanaelkane/vim-indent-guides'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -99,7 +103,7 @@ map <F5> :execute "vimgrep /" . expand("<cword>") . "/j **/*." . expand("%:e") <
 map <C-w> :vs /select,%p/
 map <s-w> \\w
 map <s-e> \\e
-map <s-b> \\b
+map <s-b> \\ge
 map <c-b> \\ge
 
 "remap ctrl+movement keys to switch between splits in normal mode
@@ -170,12 +174,13 @@ let g:UltiSnipsJumpForwardTrigger = "<s-space>"
 let g:UltiSnipsJumpBackwardTrigger = "<C-space>"
 
 let g:SuperTabDefaultCompletionType = '<C-n>'
-
+" let g:gitgutter_git_executable = 'C:\Programs\Git\bin\git.exe'     
 "set the appropriate colorscheme
 :colorscheme torte
 "set hybrid relative numbering 
 :set rnu
 :set nu
+:set wrap!
 
 :set guifont=courier_new:h10
 
