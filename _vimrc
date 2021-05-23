@@ -100,6 +100,7 @@ map <C-w> :vs /select,%p/
 map <s-w> \\w
 map <s-e> \\e
 map <s-b> \\b
+map <c-b> \\ge
 
 "remap ctrl+movement keys to switch between splits in normal mode
 nnoremap <C-J> <C-W><C-J>
@@ -162,14 +163,13 @@ let g:ycm_confirm_extra_conf = 0
 let g:ycm_global_ycm_extra_conf = '$VIM/.ycm_extra_conf.py'
 let g:ycm_always_populate_location_list = 1
 let g:ycm_open_loclist_on_ycm_diags = 1
-let g:SuperTabDefaultCompletionType = '<C-n>'
 
 " better key bindings for UltiSnipsExpandTrigger
 let g:UltiSnipsExpandTrigger = "<s-space>"
 let g:UltiSnipsJumpForwardTrigger = "<s-space>"
 let g:UltiSnipsJumpBackwardTrigger = "<C-space>"
 
-
+let g:SuperTabDefaultCompletionType = '<C-n>'
 
 "set the appropriate colorscheme
 :colorscheme torte

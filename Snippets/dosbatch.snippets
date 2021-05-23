@@ -1,10 +1,16 @@
 snippet ghdl
 rem simulate $1.vhd
-ghdl -a --std=08 --ieee=synopsys ..\\$1_pkg.vhd
-ghdl -a --std=08 --ieee=synopsys ..\\$1.vhd
-ghdl -a --std=08 --ieee=synopsys tb_$1.vhd
-ghdl -e --std=08 --ieee=synopsys tb_$1
-ghdl -r --std=08 --ieee=synopsys tb_$1 --vcd=tb_$1.vcd
+echo off
+
+echo %project_root%
+FOR /F "tokens=* USEBACKQ" %%F IN (`git rev-parse --show-toplevel`) DO (
+SET project_root=%%F
+)
+ghdl -a --ieee=synopsys ..\\$1_pkg.vhd
+ghdl -a --ieee=synopsys ..\\$1.vhd
+ghdl -a --ieee=synopsys tb_$1.vhd
+ghdl -e --ieee=synopsys tb_$1
+ghdl -r --ieee=synopsys tb_$1 --vcd=tb_$1.vcd
 
 
 IF %1 EQU 1 start "" gtkwave tb_$1.vcd

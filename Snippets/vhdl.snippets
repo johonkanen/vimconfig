@@ -1,3 +1,12 @@
+global !p
+def complete(t, opts):
+	if t:
+		opts =[m[len(t):] for m in opts if m.startswith(t)]
+	if len(opts) == 1:
+		return opts[0]
+	return "(" +'|'.join(opts) + ')'
+endglobal
+
 snippet library "std and numeric libraries"
 library ieee;
 	use ieee.std_logic_1164.all;
@@ -87,14 +96,6 @@ if not snip.c:
 	snip.rv =uuid.uuid4().hex`
 endsnippet
 
-global !p
-def complete(t, opts):
-	if t:
-		opts =[m[len(t):] for m in opts if m.startswith(t)]
-	if len(opts) == 1:
-		return opts[0]
-	return "(" +'|'.join(opts) + ')'
-endglobal
 
 snippet status 
 status $1`!p snip.rv=complete(t[1],['new','incomplete','invalid'])`
@@ -145,7 +146,6 @@ snippet type_states
 type t_$1 is ($2);
 $3`!p snip.rv=complete(t[3],['variable', 'signal'])` st_$1 : t_$1;
 endsnippet
-
 
 snippet architecture
 architecture $1 of $2 is
@@ -219,6 +219,9 @@ LIBRARY std  ;
     use ieee.math_real.all;
     USE std.textio.all  ; 
 
+library work;
+    use work.$1_pkg.all;
+
 entity tb_$1 is
 end;
 
@@ -231,6 +234,12 @@ architecture sim of tb_$1 is
     constant clock_per : time := 1 ns;
     constant clock_half_per : time := 0.5 ns;
 	constant simtime_in_clocks : integer := 50;
+
+    signal $1_clocks   : $1_clock_group;
+    signal $1_FPGA_in  : $1_FPGA_input_group;
+    signal $1_FPGA_out : $1_FPGA_output_group;
+    signal $1_data_in  : $1_data_input_group;
+    signal $1_data_out : $1_data_output_group;
 
 
 begin
@@ -272,6 +281,14 @@ begin
         end if; -- rstn
     end process clocked_reset_generator;	
 ------------------------------------------------------------------------
+
+    $1_clocks <= (clock => simulator_clock, reset_n => clocked_reset);
+
+    u_$1 : $1
+    port map( $1_clocks,
+    	  $1_FPGA_out,
+    	  $1_data_in,
+    	  $1_data_out);
 end sim;
 endsnippet
 
