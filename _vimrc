@@ -7,8 +7,7 @@ set encoding=utf-8
 set rtp+=$VIM\vim80\bundle\Vundle.vim "C:\Programs\Vim\vim80\bundle\Vundle.vim
 "call vundle#begin()
 " alternatively, pass a path where Vundle should install plugins
-call vundle#begin('$VIM\vim80\bundle')
-
+call vundle#begin('$VIM\bundle')
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
 " plugin on GitHub repo
@@ -33,7 +32,7 @@ Plugin 'scrooloose/nerdtree.git'
 " syntax checking
 Plugin 'vim-syntastic/syntastic.git'
 "the ycm needs further configuration
-Plugin 'Valloric/YouCompleteMe.git'
+" Plugin 'Valloric/YouCompleteMe.git'
 "track ultisnippets 
 Plugin 'SirVer/ultisnips'
 "since snippets are separate from engine, here are snippets
@@ -55,9 +54,11 @@ Plugin 'bkad/CamelCaseMotion'
 " extended vim motions
 Plugin 'easymotion/vim-easymotion'
 " fuzzy finder
-Plugin 'junegunn/fzf'
+" Plugin 'junegunn/fzf'
 "
 Plugin 'airblade/vim-gitgutter'
+"status bar
+" Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 "vhdl vim package
 "Plugin 'suoto/vim-hdl'
 "multi monitor support
