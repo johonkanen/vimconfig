@@ -32,7 +32,7 @@ Plugin 'scrooloose/nerdtree.git'
 " syntax checking
 Plugin 'vim-syntastic/syntastic.git'
 "the ycm needs further configuration
-" Plugin 'Valloric/YouCompleteMe.git'
+Plugin 'Valloric/YouCompleteMe.git'
 "track ultisnippets 
 Plugin 'SirVer/ultisnips'
 "since snippets are separate from engine, here are snippets
