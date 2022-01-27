@@ -125,15 +125,83 @@ if $1 then
 end if; --$1
 endsnippet
 
-snippet case "CASE-end CASE"
+snippet CASE "CASE-end CASE"
 CASE $1 is
 	$2
 end CASE; --$1
 endsnippet
 
+snippet WHEN "CASE-WHEN =>"
+WHEN $1 =>
+	$2
+endsnippet
 snippet library
 library $1;
 	use $1.$2.all;
+endsnippet
+
+snippet object "record"
+package $1_pkg is
+------------------------------------------------------------------------
+	type $1_record is record
+		$1_is_done : boolean;
+		$1_is_requested : boolean;
+	end record;
+
+	constant init_$1 : $1_record := (false, false);
+------------------------------------------------------------------------
+	procedure create_$1 (
+		signal $1_object : inout $1_record);
+------------------------------------------------------------------------
+	procedure request_$1 (
+		signal $1_object : out $1_record);
+------------------------------------------------------------------------
+	function $1_is_ready ($1_object : $1_record)
+		return boolean;
+------------------------------------------------------------------------
+end package $1_pkg;
+
+package body $1_pkg is
+------------------------------------------------------------------------
+	procedure create_$1 
+	(
+		signal $1_object : inout $1_record
+	) 
+	is
+		alias $1_is_requested is $1_object.$1_is_requested;
+		alias $1_is_done is $1_object.$1_is_done;
+	begin
+		$1_is_requested <= false;
+		if $1_is_requested then
+			$1_is_done <= true;
+		else
+			$1_is_done <= false;
+		end if;
+	end procedure;
+
+------------------------------------------------------------------------
+    procedure request_$1
+    (
+        signal $1_object : out $1_record
+    ) is
+    begin
+        $1_object.$1_is_requested <= true;
+        
+    end request_$1;
+
+------------------------------------------------------------------------
+    function $1_is_ready
+    (
+        $1_object : $1_record
+    )
+    return boolean
+    is
+    begin
+        return $1_object.$1_is_done;
+    end $1_is_ready;
+
+------------------------------------------------------------------------
+end package body $1_pkg;
 endsnippet
 
 snippet record
@@ -343,4 +411,74 @@ endsnippet
 
 snippet array
 type $1 is array (integer range 0 to $2) of $3;
+endsnippet
+
+## Entity Declaration
+snippet ent
+	entity ${1:`vim_snippets#Filename()`} is
+		port (
+			${1:`vim_snippets#Filename()`}_clocks : in ${1:`vim_snippets#Filename()`}_clock_record;
+
+			${1:`vim_snippets#Filename()`}_FPGA_in : in ${1:`vim_snippets#Filename()`}_FPGA_input_record;
+			${1:`vim_snippets#Filename()`}_FPGA_out : out ${1:`vim_snippets#Filename()`}_FPGA_output_record;
+
+			${1:`vim_snippets#Filename()`}_data_in : in ${1:`vim_snippets#Filename()`}_data_input_record;
+			${1:`vim_snippets#Filename()`}_data_out : out ${1:`vim_snippets#Filename()`}_data_output_record${3}
+		);
+	end entity $1;
+
+## component Declaration
+snippet component
+	type ${1:`vim_snippets#Filename()`}${2}_clock_record is record
+		clock : std_logic;
+	end record;
+	constant init_$1_clocks : $1_clock_record :=
+	(clock => '0');
+
+	type $1_FPGA_input_record is record
+		clock : std_logic;
+	end record;
+	constant init_$1_FPGA_in : $1_FPGA_input_record :=
+	(clock => '0');
+
+	type $1_FPGA_output_record is record
+		clock : std_logic;
+	end record;
+	constant init_$1_FPGA_out : $1_FPGA_output_record :=
+	(clock => '0');
+
+	type $1_data_input_record is record
+		clock : std_logic;
+	end record;
+	constant init_$1_data_in : $1_data_input_record :=
+	(clock => '0');
+
+	type $1_data_output_record is record
+		clock : std_logic;
+	end record;
+	constant init_$1_data_out : $1_data_output_record :=
+	(clock => '0');
+
+	component $1 is
+		port (
+			$1_clocks : in $1_clock_record; 
+			$1_FPGA_in : in $1_FPGA_input_record;
+			$1_FPGA_out : out $1_FPGA_output_record; 
+			$1_data_in : in $1_data_input_record;
+			$1_data_out : out $1_data_output_record
+		);
+	end component $1;
+
+	-- signal $1_clocks   : $1_clock_record       := init_$1_clocks   ;
+	-- signal $1_FPGA_in  : $1_FPGA_input_record  := init_$1_FPGA_in  ;
+	-- signal $1_FPGA_out : $1_FPGA_output_record := init_$1_FPGA_out ;
+	-- signal $1_data_in  : $1_data_input_record  := init_$1_data_in  ;
+	-- signal $1_data_out : $1_data_output_record := init_$1_data_out ;
+
+	-- u_$1 : $1
+	-- port map( $1_clocks,
+	-- 	  $1_FPGA_in,
+	--	  $1_FPGA_out,
+	--	  $1_data_in,
+	--	  $1_data_out);
 endsnippet
